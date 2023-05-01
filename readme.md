@@ -47,13 +47,21 @@ R filename -> Replace the program of the simulated process with the program in t
 ## Sample Process File
 
 S 1000
+
 A 19
+
 A 20
+
 D 53
+
 B
+
 R filename
+
 A 21
+
 A 0
+
 D 3
 
 ## Context Switching
