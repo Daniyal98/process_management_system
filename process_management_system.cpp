@@ -133,8 +133,12 @@ int main()
 				if (MyFile)
 				{
 					cout << "<-----------Creating Process----------->" << endl;
-					while (MyFile >> c >> val)
+					while (MyFile >> c)
 					{
+						if (c == "B")
+							val = "0";
+						else
+							MyFile >> val;
 						string instruction = c + val;
 						Instruction I;
 						if (c != "R")
@@ -146,7 +150,6 @@ int main()
 							I.fileName = val;
 						
 						I.type = c;
-						cout << "I.type: " << I.type << endl;
 						insert(P.Instr, I, size);
 					}
 
@@ -179,7 +182,6 @@ int main()
 					Running.push(Ready.front());
 					Ready.pop();
 					cout << "<----------Process Executing---------->" << endl;
-					cout << "Type: " << Running.front()->Instr[Running.front()->PC].type << endl;
 					if (Running.front()->Instr[Running.front()->PC].type == "S")
 					{
 						Running.front()->integerValue = Running.front()->Instr[Running.front()->PC].integerValue;
@@ -406,7 +408,6 @@ int main()
 						cout << endl << endl; 
 					}
 					CpuTime++;
-					cout << "At the end of else condition" << endl;
 				}
 			}
 			else if (strcmp(command, "PRT") == 0)
