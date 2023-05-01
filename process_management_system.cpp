@@ -1,5 +1,3 @@
-/*Submitted by Daniyal Ishfaq (i160201) and Joan Shirazi (i16-0285)*/
-
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
